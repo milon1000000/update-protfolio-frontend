@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FiLoader } from "react-icons/fi";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -129,7 +130,7 @@ function Contact() {
               className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-lg shadow-lg transition"
               disabled={send}
             >
-              {send ? "sending" : "send"}
+              {send ? <FiLoader className="animate-spin"/> : "send"}
             </motion.button>
 
             {/* Toast Container */}
