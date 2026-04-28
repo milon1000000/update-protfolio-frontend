@@ -27,17 +27,11 @@ function Contact() {
     setSend(true);
 
     try {
-      // const result = await axios.post(
-      //   "http://localhost:5000/api/contact/contactController",
-      //   formData,
-      // );
-
       const result = await axios.post(
-  // "https://protfolio-backend-skxl.onrender.com/api/contact/contactController",
-      "http://localhost:5000/api/contact/contactController",
+        "https://update-protfolio-backend.onrender.com/api/contact/contactController",
 
-  formData
-);
+        formData,
+      );
 
       if (result.data.success) {
         toast.success(result.data.message || "Message sent successfully!");
