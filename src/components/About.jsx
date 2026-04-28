@@ -70,7 +70,7 @@ function About() {
                   >
                     <div className="text-3xl flex gap-3 items-center">
                       <data.icon className="text-purple-500 "/>
-                       <h3 className="text-xl font-semibold lg:whitespace-nowrap">{data.title}</h3>
+                       <h3 className="text-xl font-semibold">{data.title}</h3>
                     </div>
                    
                     <p className="text-gray-300 text-sm">{data.description}</p>
