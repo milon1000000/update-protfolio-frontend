@@ -127,10 +127,10 @@ function Contact() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               type="submit"
-              className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-lg shadow-lg transition"
+              className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-lg shadow-lg transition flex items-center justify-center"
               disabled={send}
             >
-              {send ? <FiLoader className="animate-spin"/> : "send"}
+              {send ? <FiLoader className="animate-spin text-xl" /> : "send"}
             </motion.button>
 
             {/* Toast Container */}
