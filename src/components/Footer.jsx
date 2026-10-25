@@ -31,7 +31,7 @@ function Footer() {
 
           <motion.a
             whileHover={{ scale: 1.2 }}
-            href="https://www.facebook.com/share/1ARB8y5bZ7/"
+            href="https://www.facebook.com/share/1KombUH9QW"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-blue-600 transition duration-300"

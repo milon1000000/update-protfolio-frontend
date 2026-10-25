@@ -17,7 +17,7 @@ function About() {
           About <span className="text-purple-500">Me</span>
         </h2>
         <p className="text-gray-200 text-center max-w-2xl mx-auto mb-16">
-          Get to know more about my background and passion
+          Get to know more about my background, skills, and passion
         </p>
 
         {/* Image + My Journey */}
@@ -46,19 +46,11 @@ function About() {
           >
             <div className="rounded-2xl p-8 bg-gray-800">
               <h3 className="text-2xl font-semibold mb-6">My Journey</h3>
-              <p className="text-gray-300 mb-6">
-                I'm a passionate full-stack developer with over 5 years of
-                experience creating digital solutions for businesses around the
-                world. My journey started with basic HTML/CSS websites and has
-                evolved into building complex web applications with modern
-                frameworks.
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                I'm a passionate Full Stack Developer specializing in building modern, scalable, and responsive web applications. With hands-on expertise in React, Next.js, TypeScript, and Node.js, I bridge the gap between polished user experiences and robust backend architectures.
               </p>
-              <p className="text-gray-300 mb-12">
-                When I'm not coding, you can find me exploring new technologies,
-                contributing to open-source projects, or sharing my knowledge
-                through tech blogs and tutorials. I believe in continuous
-                learning and pushing the boundaries of what's possible on the
-                web.
+              <p className="text-gray-300 mb-12 leading-relaxed">
+                I focus on writing clean, type-safe code, designing efficient databases with PostgreSQL, MongoDB, and Prisma ORM, and boosting performance with Redis caching. Leveraging modern tools like Tailwind CSS and shadcn/ui, I love turning complex ideas into seamless digital solutions.
               </p>
 
               {/* Cards */}

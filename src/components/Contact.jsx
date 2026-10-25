@@ -25,14 +25,29 @@ function Contact() {
   // Handle form submit
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+      toast.error("Please fill in all fields before sending!");
+      return;
+    }
+
     setSend(true);
 
     try {
-      const result = await axios.post(
-        "https://update-protfolio-backend.onrender.com/api/contact/contactController",
+      const rawApiUrl =
+        import.meta.env.VITE_BASE_URL ||
+        import.meta.env.VITE_API_URL ||
+        "http://localhost:5000";
 
-        formData,
-      );
+      // Normalize URL (strip trailing slashes)
+      const cleanUrl = rawApiUrl.replace(/\/+$/, "");
+
+      // Handle both cases: with or without /api/v1 in VITE_BASE_URL
+      const targetUrl = cleanUrl.endsWith("/api/v1")
+        ? `${cleanUrl}/user/send-email`
+        : `${cleanUrl}/api/v1/user/send-email`;
+
+      const result = await axios.post(targetUrl, formData);
 
       if (result.data.success) {
         toast.success(result.data.message || "Message sent successfully!");
@@ -44,9 +59,7 @@ function Contact() {
       } else {
         toast.error(result.data.message || "Failed to send message");
       }
-      setSend(false);
     } catch (error) {
-      setSend(false);
       if (
         error.response &&
         error.response.data &&
@@ -54,9 +67,10 @@ function Contact() {
       ) {
         toast.error(error.response.data.message);
       } else {
-        // Generic network or unknown error
-        toast.error("Something went wrong! Please try again.");
+        toast.error("Unable to connect to the server. Please check your backend!");
       }
+    } finally {
+      setSend(false);
     }
   };
 
@@ -81,16 +95,17 @@ function Contact() {
         </p>
 
         {/* Form Card */}
-        <div className="max-w-3xl mx-auto bg-white/8 backdrop-blur-lg border border-gray-200 rounded-2xl p-10 shadow-xl">
+        <div className="max-w-3xl mx-auto bg-white/8 backdrop-blur-lg border border-gray-700/80 rounded-2xl p-8 sm:p-10 shadow-xl">
           <form className="space-y-6 relative" onSubmit={handleSubmit}>
             {/* Name */}
             <div>
-              <label className="block text-gray-300 mb-2">Your Name</label>
+              <label className="block text-gray-300 mb-2 font-medium">Your Name</label>
               <input
                 type="text"
                 name="name"
+                required
                 placeholder="Enter your name"
-                className="w-full bg-gray-800 text-white rounded-lg px-4 py-3 focus:ring-2 focus:ring-purple-500 outline-none transition"
+                className="w-full bg-gray-800 text-white rounded-lg px-4 py-3 border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 outline-none transition"
                 value={formData.name}
                 onChange={handleChange}
               />
@@ -98,12 +113,13 @@ function Contact() {
 
             {/* Email */}
             <div>
-              <label className="block text-gray-300 mb-2">Your Email</label>
+              <label className="block text-gray-300 mb-2 font-medium">Your Email</label>
               <input
                 type="email"
                 name="email"
+                required
                 placeholder="Enter your email"
-                className="w-full bg-gray-800 text-white rounded-lg px-4 py-3 focus:ring-2 focus:ring-purple-500 outline-none transition"
+                className="w-full bg-gray-800 text-white rounded-lg px-4 py-3 border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 outline-none transition"
                 value={formData.email}
                 onChange={handleChange}
               />
@@ -111,12 +127,13 @@ function Contact() {
 
             {/* Message */}
             <div>
-              <label className="block text-gray-300 mb-2">Your Message</label>
+              <label className="block text-gray-300 mb-2 font-medium">Your Message</label>
               <textarea
                 name="message"
+                required
                 rows="5"
                 placeholder="Write your message..."
-                className="w-full bg-gray-800 text-white rounded-lg px-4 py-3 focus:ring-2 focus:ring-purple-500 outline-none transition"
+                className="w-full bg-gray-800 text-white rounded-lg px-4 py-3 border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 outline-none transition"
                 value={formData.message}
                 onChange={handleChange}
               ></textarea>
@@ -124,30 +141,20 @@ function Contact() {
 
             {/* Button */}
             <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               type="submit"
-              className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-lg shadow-lg transition flex items-center justify-center"
+              className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3.5 rounded-lg shadow-lg shadow-purple-600/30 transition flex items-center justify-center cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
               disabled={send}
             >
-              {send ? <FiLoader className="animate-spin text-xl" /> : "send"}
+              {send ? <FiLoader className="animate-spin text-xl" /> : "Send Message"}
             </motion.button>
 
             {/* Toast Container */}
             <ToastContainer
-              position={window.innerWidth < 640 ? "top-center" : "top-right"}
+              position={typeof window !== "undefined" && window.innerWidth < 640 ? "top-center" : "top-right"}
               autoClose={3000}
               style={{ zIndex: 9999 }}
-              toastStyle={
-                window.innerWidth < 640
-                  ? {
-                      width: "60%",
-                      fontSize: "14px",
-                      padding: "10px",
-                      minHeight: "50px",
-                    }
-                  : {}
-              }
             />
           </form>
         </div>
