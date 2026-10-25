@@ -125,6 +125,99 @@ export const skills = [
 ];
 
 export const projects = [
+    {
+    title: "Housing-Management Project",
+    description:
+      "A full-stack housing and rental management platform enabling tenants to discover and book rooms seamlessly, featuring property listings, online booking workflows, secure payments, and tenant-landlord management dashboards.",
+    image: "/housing.png",
+    tech: [
+      {
+        name: "Next.js",
+        link: "https://nextjs.org",
+        icon: SiNextdotjs,
+      },
+      {
+        name: "Tailwind",
+        link: "https://tailwindcss.com",
+        icon: RiTailwindCssFill,
+      },
+      {
+        name: "shadcn/ui",
+        link: "https://ui.shadcn.com",
+        icon: SiShadcnui,
+      },
+      {
+        name: "Node.js",
+        link: "https://nodejs.org",
+        icon: FaNodeJs,
+      },
+      {
+        name: "Express.js",
+        link: "https://expressjs.com",
+        icon: SiExpress,
+      },
+      {
+        name: "PostgreSQL",
+        link: "https://www.postgresql.org",
+        icon: SiPostgresql,
+      },
+      {
+        name: "Prisma",
+        link: "https://www.prisma.io",
+        icon: SiPrisma,
+      },
+    ],
+    icons: [SiNextdotjs, RiTailwindCssFill, SiShadcnui, FaNodeJs, SiExpress, SiPostgresql, SiPrisma],
+    demo: "https://housing-management-frontend.vercel.app/",
+    code: "https://github.com/milon1000000/gearup-project-full-stact",
+  },
+  {
+    title: "Gear-Up Project",
+    description:
+      "A seamless full-stack gear and equipment rental web app enabling users to discover and rent products on-demand, complete with secure checkout, booking management, and role-based admin controls.",
+    image: "/GearUp.png",
+    tech: [
+      {
+        name: "Next.js",
+        link: "https://nextjs.org",
+        icon: SiNextdotjs,
+      },
+      {
+        name: "Tailwind",
+        link: "https://tailwindcss.com",
+        icon: RiTailwindCssFill,
+      },
+      {
+        name: "shadcn/ui",
+        link: "https://ui.shadcn.com",
+        icon: SiShadcnui,
+      },
+      {
+        name: "Node.js",
+        link: "https://nodejs.org",
+        icon: FaNodeJs,
+      },
+      {
+        name: "Express.js",
+        link: "https://expressjs.com",
+        icon: SiExpress,
+      },
+      {
+        name: "PostgreSQL",
+        link: "https://www.postgresql.org",
+        icon: SiPostgresql,
+      },
+      {
+        name: "Prisma",
+        link: "https://www.prisma.io",
+        icon: SiPrisma,
+      },
+    ],
+    icons: [SiNextdotjs, RiTailwindCssFill, SiShadcnui, FaNodeJs, SiExpress, SiPostgresql, SiPrisma],
+    demo: "https://gearup-project-full-stact.vercel.app",
+    code: "https://github.com/milon1000000/gearup-project-full-stact",
+  },
+
   {
     title: "LinkedIn Clone",
     description:
@@ -197,96 +290,5 @@ export const projects = [
     demo: "https://e-commerce-frontend-9dce.onrender.com",
     code: "https://github.com/milon1000000/e-commerce-frontend",
   },
-  {
-    title: "Gear-Up Project",
-    description:
-      "A seamless full-stack gear and equipment rental web app enabling users to discover and rent products on-demand, complete with secure checkout, booking management, and role-based admin controls.",
-    image: "/GearUp.png",
-    tech: [
-      {
-        name: "Next.js",
-        link: "https://nextjs.org",
-        icon: SiNextdotjs,
-      },
-      {
-        name: "Tailwind",
-        link: "https://tailwindcss.com",
-        icon: RiTailwindCssFill,
-      },
-      {
-        name: "shadcn/ui",
-        link: "https://ui.shadcn.com",
-        icon: SiShadcnui,
-      },
-      {
-        name: "Node.js",
-        link: "https://nodejs.org",
-        icon: FaNodeJs,
-      },
-      {
-        name: "Express.js",
-        link: "https://expressjs.com",
-        icon: SiExpress,
-      },
-      {
-        name: "PostgreSQL",
-        link: "https://www.postgresql.org",
-        icon: SiPostgresql,
-      },
-      {
-        name: "Prisma",
-        link: "https://www.prisma.io",
-        icon: SiPrisma,
-      },
-    ],
-    icons: [SiNextdotjs, RiTailwindCssFill, SiShadcnui, FaNodeJs, SiExpress, SiPostgresql, SiPrisma],
-    demo: "https://gearup-project-full-stact.vercel.app",
-    code: "https://github.com/milon1000000/gearup-project-full-stact",
-  },
-  {
-    title: "Housing-Management Project",
-    description:
-      "A full-stack housing and rental management platform enabling tenants to discover and book rooms seamlessly, featuring property listings, online booking workflows, secure payments, and tenant-landlord management dashboards.",
-    image: "/housing.png",
-    tech: [
-      {
-        name: "Next.js",
-        link: "https://nextjs.org",
-        icon: SiNextdotjs,
-      },
-      {
-        name: "Tailwind",
-        link: "https://tailwindcss.com",
-        icon: RiTailwindCssFill,
-      },
-      {
-        name: "shadcn/ui",
-        link: "https://ui.shadcn.com",
-        icon: SiShadcnui,
-      },
-      {
-        name: "Node.js",
-        link: "https://nodejs.org",
-        icon: FaNodeJs,
-      },
-      {
-        name: "Express.js",
-        link: "https://expressjs.com",
-        icon: SiExpress,
-      },
-      {
-        name: "PostgreSQL",
-        link: "https://www.postgresql.org",
-        icon: SiPostgresql,
-      },
-      {
-        name: "Prisma",
-        link: "https://www.prisma.io",
-        icon: SiPrisma,
-      },
-    ],
-    icons: [SiNextdotjs, RiTailwindCssFill, SiShadcnui, FaNodeJs, SiExpress, SiPostgresql, SiPrisma],
-    demo: "https://housing-management-frontend.vercel.app/",
-    code: "https://github.com/milon1000000/gearup-project-full-stact",
-  }
+  
 ];

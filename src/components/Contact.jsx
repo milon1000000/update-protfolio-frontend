@@ -60,15 +60,12 @@ function Contact() {
         toast.error(result.data.message || "Failed to send message");
       }
     } catch (error) {
-      if (
-        error.response &&
-        error.response.data &&
-        error.response.data.message
-      ) {
-        toast.error(error.response.data.message);
-      } else {
-        toast.error("Unable to connect to the server. Please check your backend!");
-      }
+      console.error("Contact Form Error:", error);
+      const serverMessage =
+        error.response?.data?.message ||
+        error.response?.data?.error ||
+        error.message;
+      toast.error(serverMessage || "Unable to connect to the server. Please check your backend!");
     } finally {
       setSend(false);
     }
