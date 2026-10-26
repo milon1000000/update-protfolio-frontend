@@ -45,7 +45,7 @@ export const aboutInfo = [
     icon: FaServer,
     title: 'Backend & REST APIs',
     description: 'Designing secure and robust backend systems with Express.js, JWT authentication, and Socket.io.',
-    color: 'text-purple'
+    color: 'text-blue'
   },
   {
     icon: FaDatabase,
@@ -67,7 +67,7 @@ export const aboutInfo = [
   },
   {
     icon: FaCloudUploadAlt,
-    title: 'DevOps & Deployment',
+    title: 'Deployment',
     description: 'Managing version control via Git/GitHub and deploying reliable full-stack apps on Vercel & Render.',
     color: 'text-pink'
   }

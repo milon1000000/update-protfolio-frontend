@@ -78,31 +78,31 @@ function Contact() {
       transition={{ duration: 0.9, ease: "easeInOut" }}
       viewport={{ once: true }}
       id="contact"
-      className="py-24 bg-linear-to-r from-[#1a1a1a] via-[#2d2d2d] to-[#1a1a1a]"
+      className="py-24 bg-white text-gray-900"
     >
       <div className="container mx-auto px-6">
         {/* Heading */}
-        <h2 className="text-4xl font-bold text-center mb-4 text-white">
-          Get In <span className="text-purple-500">Touch</span>
+        <h2 className="text-4xl font-bold text-center mb-4 text-gray-900">
+          Get In <span className="text-blue-600">Touch</span>
         </h2>
 
-        <p className="text-gray-400 text-center max-w-2xl mx-auto mb-16">
+        <p className="text-gray-600 text-center max-w-2xl mx-auto mb-16">
           Have a project in mind or want to collaborate? Let’s build something
           amazing together.
         </p>
 
         {/* Form Card */}
-        <div className="max-w-3xl mx-auto bg-white/8 backdrop-blur-lg border border-gray-700/80 rounded-2xl p-8 sm:p-10 shadow-xl">
+        <div className="max-w-3xl mx-auto bg-slate-50/80 border border-gray-200/90 rounded-2xl p-8 sm:p-10 shadow-xl shadow-gray-200/60">
           <form className="space-y-6 relative" onSubmit={handleSubmit}>
             {/* Name */}
             <div>
-              <label className="block text-gray-300 mb-2 font-medium">Your Name</label>
+              <label className="block text-gray-800 mb-2 font-medium">Your Name</label>
               <input
                 type="text"
                 name="name"
                 required
                 placeholder="Enter your name"
-                className="w-full bg-gray-800 text-white rounded-lg px-4 py-3 border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 outline-none transition"
+                className="w-full bg-white text-gray-900 rounded-lg px-4 py-3 border border-gray-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition placeholder:text-gray-400 shadow-2xs"
                 value={formData.name}
                 onChange={handleChange}
               />
@@ -110,13 +110,13 @@ function Contact() {
 
             {/* Email */}
             <div>
-              <label className="block text-gray-300 mb-2 font-medium">Your Email</label>
+              <label className="block text-gray-800 mb-2 font-medium">Your Email</label>
               <input
                 type="email"
                 name="email"
                 required
                 placeholder="Enter your email"
-                className="w-full bg-gray-800 text-white rounded-lg px-4 py-3 border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 outline-none transition"
+                className="w-full bg-white text-gray-900 rounded-lg px-4 py-3 border border-gray-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition placeholder:text-gray-400 shadow-2xs"
                 value={formData.email}
                 onChange={handleChange}
               />
@@ -124,13 +124,13 @@ function Contact() {
 
             {/* Message */}
             <div>
-              <label className="block text-gray-300 mb-2 font-medium">Your Message</label>
+              <label className="block text-gray-800 mb-2 font-medium">Your Message</label>
               <textarea
                 name="message"
                 required
                 rows="5"
                 placeholder="Write your message..."
-                className="w-full bg-gray-800 text-white rounded-lg px-4 py-3 border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 outline-none transition"
+                className="w-full bg-white text-gray-900 rounded-lg px-4 py-3 border border-gray-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition placeholder:text-gray-400 shadow-2xs"
                 value={formData.message}
                 onChange={handleChange}
               ></textarea>
@@ -141,7 +141,7 @@ function Contact() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               type="submit"
-              className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3.5 rounded-lg shadow-lg shadow-purple-600/30 transition flex items-center justify-center cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3.5 rounded-lg shadow-lg shadow-blue-600/30 transition flex items-center justify-center cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
               disabled={send}
             >
               {send ? <FiLoader className="animate-spin text-xl" /> : "Send Message"}
@@ -149,6 +149,7 @@ function Contact() {
 
             {/* Toast Container */}
             <ToastContainer
+              theme="light"
               position={typeof window !== "undefined" && window.innerWidth < 640 ? "top-center" : "top-right"}
               autoClose={3000}
               style={{ zIndex: 9999 }}

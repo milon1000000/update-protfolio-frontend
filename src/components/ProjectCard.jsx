@@ -10,12 +10,12 @@ function ProjectCard({ title, description, image, tech, icons, demo, code, index
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1, ease: "easeInOut" }}
       viewport={{ once: true, amount: 0.2 }}
-      className="group relative bg-[#18181f] border border-gray-800/80 hover:border-purple-500/50 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/10 hover:-translate-y-2 flex flex-col justify-between"
+      className="group relative bg-white border border-gray-200/90 hover:border-blue-400 rounded-2xl overflow-hidden transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1.5 flex flex-col justify-between"
     >
       {/* Top Browser Bar Mockup + Image */}
-      <div className="relative overflow-hidden bg-gray-950">
+      <div className="relative overflow-hidden bg-gray-50">
         {/* macOS style browser window dots */}
-        <div className="flex items-center gap-1.5 px-4 py-2.5 bg-[#121217] border-b border-gray-800/70">
+        <div className="flex items-center gap-1.5 px-4 py-2.5 bg-gray-100 border-b border-gray-200">
           <span className="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
           <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></span>
           <span className="w-2.5 h-2.5 rounded-full bg-green-500/80"></span>
@@ -30,7 +30,7 @@ function ProjectCard({ title, description, image, tech, icons, demo, code, index
             className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
           />
           {/* Subtle bottom gradient over image */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#18181f] via-transparent to-transparent opacity-80 pointer-events-none"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>
         </div>
       </div>
 
@@ -39,14 +39,14 @@ function ProjectCard({ title, description, image, tech, icons, demo, code, index
         <div>
           {/* Title & Quick Link */}
           <div className="flex items-center justify-between mb-3">
-            <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-purple-400 transition-colors">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
               {title}
             </h3>
             <a
               href={demo}
               target="_blank"
               rel="noreferrer"
-              className="text-gray-400 hover:text-purple-400 transition-colors p-1"
+              className="text-gray-400 hover:text-blue-600 transition-colors p-1"
               title="Open Live Preview"
             >
               <FiExternalLink className="text-lg" />
@@ -54,13 +54,13 @@ function ProjectCard({ title, description, image, tech, icons, demo, code, index
           </div>
 
           {/* Description */}
-          <p className="text-gray-300 text-sm leading-relaxed mb-6">
+          <p className="text-gray-600 text-sm leading-relaxed mb-6">
             {description}
           </p>
 
           {/* Tech Badges */}
           <div className="mb-6">
-            <h4 className="text-xs uppercase tracking-wider text-gray-400 font-semibold mb-2.5">
+            <h4 className="text-xs uppercase tracking-wider text-gray-500 font-semibold mb-2.5">
               Technologies Used
             </h4>
             <div className="flex flex-wrap gap-2">
@@ -72,9 +72,9 @@ function ProjectCard({ title, description, image, tech, icons, demo, code, index
                     target="_blank"
                     rel="noreferrer"
                     key={idx}
-                    className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#101014] hover:bg-[#202028] text-gray-300 hover:text-purple-300 rounded-lg text-xs font-medium border border-gray-800 hover:border-purple-500/40 transition duration-200"
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-gray-100 hover:bg-blue-50 text-gray-800 hover:text-blue-700 rounded-lg text-xs font-medium border border-gray-200/90 hover:border-blue-300 shadow-2xs transition duration-200"
                   >
-                    {Icon && <Icon className="text-purple-400 text-sm shrink-0" />}
+                    {Icon && <Icon className="text-blue-600 text-sm shrink-0" />}
                     <span>{item.name}</span>
                   </a>
                 );
@@ -84,12 +84,12 @@ function ProjectCard({ title, description, image, tech, icons, demo, code, index
         </div>
 
         {/* Action Buttons */}
-        <div className="flex items-center gap-3 pt-4 border-t border-gray-800/80">
+        <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
           <a
             href={demo}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-semibold text-sm rounded-xl shadow-lg shadow-purple-600/25 hover:shadow-purple-600/40 transition-all duration-300 hover:scale-[1.02]"
+            className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold text-sm rounded-xl shadow-md shadow-blue-600/20 hover:shadow-blue-600/35 transition-all duration-300 hover:scale-[1.02]"
           >
             <FiExternalLink className="text-base" />
             <span>Live Demo</span>
@@ -99,9 +99,9 @@ function ProjectCard({ title, description, image, tech, icons, demo, code, index
             href={code}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-[#121217] hover:bg-[#22222a] text-gray-200 hover:text-white font-semibold text-sm rounded-xl border border-gray-700/80 hover:border-purple-500/40 transition-all duration-300 hover:scale-[1.02]"
+            className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-white hover:bg-gray-50 text-gray-800 hover:text-blue-600 font-semibold text-sm rounded-xl border border-gray-300 hover:border-blue-300 shadow-xs transition-all duration-300 hover:scale-[1.02]"
           >
-            <FaGithub className="text-base text-gray-400 group-hover:text-white" />
+            <FaGithub className="text-base text-gray-700 group-hover:text-blue-600 transition-colors" />
             <span>Source Code</span>
           </a>
         </div>
