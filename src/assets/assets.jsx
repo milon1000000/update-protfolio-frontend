@@ -169,7 +169,7 @@ export const projects = [
     ],
     icons: [SiNextdotjs, RiTailwindCssFill, SiShadcnui, FaNodeJs, SiExpress, SiPostgresql, SiPrisma],
     demo: "https://housing-management-frontend.vercel.app/",
-    code: "https://github.com/milon1000000/gearup-project-full-stact",
+    code: "https://github.com/milon1000000/Housing-Management-ProjectFrontend",
   },
   {
     title: "Gear-Up Project",
